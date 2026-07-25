@@ -1,39 +1,49 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="robots" content="noindex,nofollow" />
     <title>Vivaha</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <div class="background"></div>
+<main class="splash-screen" aria-label="Vivaha Splash Screen">
 
-    <div class="container">
+    <div class="background-glow"></div>
 
-        <img src="logo.jpg" class="logo" alt="Vivaha Logo">
+    <section class="content">
 
-        <h1>VIVAHA</h1>
+        <img
+            src="logo.jpg"
+            alt="Vivaha Logo"
+            class="logo"
+            draggable="false"
+        />
+
+        <h1 class="brand">
+            VIVAHA
+        </h1>
 
         <p class="tagline">
             Where Hearts Find Home
         </p>
 
-        <div class="loading-container">
-
-            <div class="loading-bar">
-                <div class="progress"></div>
-            </div>
-
-            <p id="loadingText">
-                Building Meaningful Connections...
-            </p>
-
+        <div class="loader">
+            <div class="loader-fill"></div>
         </div>
 
-    </div>
+        <p class="loading-text" id="loadingText">
+            Building Meaningful Connections...
+        </p>
+
+    </section>
+
+</main>
 
 <script src="script.js"></script>
 
