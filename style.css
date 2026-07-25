@@ -1,32 +1,60 @@
-/* ===========================================
-   VIVAHA SPLASH SCREEN
-   Premium Black & White Theme
-=========================================== */
+/* style.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* ==========================================
+   VIVAHA SPLASH SCREEN
+   Premium Production Ready
+========================================== */
+
+:root{
+
+    --bg:#050505;
+    --white:#ffffff;
+    --grey:#bdbdbd;
+    --gold:#d6b35d;
+
+}
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    -webkit-tap-highlight-color:transparent;
 }
 
-:root{
+html,
+body{
 
-    --bg:#050505;
-    --card:#111111;
-    --text:#FFFFFF;
-    --text-secondary:#B8B8B8;
-    --border:#2B2B2B;
-    --gold:#D4AF37;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    touch-action:none;
+    overscroll-behavior:none;
+    background:var(--bg);
 
 }
 
 body{
 
+    position:fixed;
+    inset:0;
+
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+}
+
+.splash-screen{
+
+    position:relative;
+
     width:100%;
-    height:100vh;
+    height:100dvh;
 
     overflow:hidden;
 
@@ -34,247 +62,229 @@ body{
     justify-content:center;
     align-items:center;
 
-    background:var(--bg);
-
-    color:var(--text);
-
-    position:relative;
-
-}
-
-/* Background Glow */
-
-.background{
-
-    position:absolute;
-    inset:0;
-
     background:
-    radial-gradient(circle at top,#181818 0%,#050505 55%);
+    radial-gradient(circle at center,
+    rgba(255,255,255,.045) 0%,
+    rgba(255,255,255,.015) 28%,
+    rgba(5,5,5,1) 70%);
 
-    animation:bgGlow 6s ease-in-out infinite;
+    transition:opacity .6s ease;
 
 }
 
-/* Floating Light */
-
-.background::before{
-
-    content:"";
+.background-glow{
 
     position:absolute;
-
-    width:500px;
-    height:500px;
-
-    background:rgba(255,255,255,.03);
+    width:520px;
+    height:520px;
 
     border-radius:50%;
 
-    filter:blur(120px);
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.035),
+    transparent 70%);
 
-    top:-220px;
-    left:50%;
+    filter:blur(60px);
 
-    transform:translateX(-50%);
+    animation:glow 6s ease-in-out infinite;
+
+    pointer-events:none;
 
 }
 
-/* Main Container */
-
-.container{
+.content{
 
     position:relative;
-    z-index:10;
 
     display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+
+    z-index:2;
 
     text-align:center;
 
-    animation:fadeIn 1.2s ease;
+    padding:20px;
 
 }
-
-/* Logo */
 
 .logo{
 
     width:120px;
-
     user-select:none;
+    pointer-events:none;
 
-    animation:logoAnimation 1.3s ease;
+    animation:
+    logoFloat 4s ease-in-out infinite,
+    fadeUp .8s ease;
 
 }
 
-/* Brand */
+.brand{
 
-h1{
+    margin-top:26px;
 
-    margin-top:28px;
+    color:#fff;
 
-    font-size:56px;
-
+    font-size:34px;
     font-weight:700;
 
-    letter-spacing:12px;
+    letter-spacing:10px;
 
-    color:#FFFFFF;
+    text-transform:uppercase;
+
+    animation:fadeUp 1s ease;
 
 }
-
-/* Tagline */
 
 .tagline{
 
     margin-top:14px;
 
-    font-size:18px;
+    color:var(--grey);
 
-    font-weight:300;
-
-    color:var(--text-secondary);
+    font-size:15px;
 
     letter-spacing:1px;
 
-}
+    font-weight:300;
 
-/* Loading Area */
-
-.loading-container{
-
-    margin-top:60px;
-
-    width:300px;
+    animation:fadeUp 1.2s ease;
 
 }
 
-/* Loading Bar */
+.loader{
 
-.loading-bar{
+    width:220px;
+    height:4px;
 
-    width:100%;
-    height:5px;
+    margin-top:40px;
 
-    background:#202020;
+    background:rgba(255,255,255,.08);
 
-    border-radius:50px;
+    border-radius:999px;
 
     overflow:hidden;
 
 }
 
-/* Progress */
+.loader-fill{
 
-.progress{
-
-    width:0%;
+    width:100%;
     height:100%;
 
-    border-radius:50px;
+    border-radius:999px;
 
-    background:linear-gradient(
-        90deg,
-        #ffffff,
-        var(--gold),
-        #ffffff
-    );
+    background:
+    linear-gradient(
+    90deg,
+    #ffffff,
+    #d6b35d,
+    #ffffff);
+
+    transform-origin:left;
 
     animation:loading 3s linear forwards;
 
 }
 
-/* Loading Text */
+.loading-text{
 
-#loadingText{
+    margin-top:20px;
 
-    margin-top:18px;
+    min-height:24px;
 
-    color:#AFAFAF;
+    color:#d2d2d2;
 
-    font-size:15px;
-
-    font-weight:400;
+    font-size:14px;
 
     letter-spacing:.5px;
 
-    transition:.4s;
+    transition:
+    opacity .35s ease,
+    transform .35s ease;
 
 }
 
-/* Footer */
+.fade-out{
 
-.footer{
-
-    position:absolute;
-
-    bottom:35px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    font-size:13px;
-
-    color:#666;
-
-    letter-spacing:1px;
+    opacity:0;
 
 }
-
-/* ===========================
-        Animations
-=========================== */
 
 @keyframes loading{
 
     from{
 
-        width:0%;
+        transform:scaleX(0);
 
     }
 
     to{
 
-        width:100%;
+        transform:scaleX(1);
 
     }
 
 }
 
-@keyframes logoAnimation{
+@keyframes logoFloat{
 
-    from{
+    0%{
 
-        opacity:0;
-
-        transform:
-        scale(.75)
-        rotate(-8deg);
+        transform:translateY(0px);
 
     }
 
-    to{
+    50%{
 
-        opacity:1;
+        transform:translateY(-6px);
 
-        transform:
-        scale(1)
-        rotate(0deg);
+    }
+
+    100%{
+
+        transform:translateY(0px);
 
     }
 
 }
 
-@keyframes fadeIn{
+@keyframes glow{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:.4;
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:.4;
+
+    }
+
+}
+
+@keyframes fadeUp{
 
     from{
 
         opacity:0;
-
         transform:translateY(20px);
 
     }
@@ -282,70 +292,41 @@ h1{
     to{
 
         opacity:1;
-
         transform:translateY(0);
 
     }
 
 }
 
-@keyframes bgGlow{
-
-    0%{
-
-        opacity:.7;
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        opacity:1;
-
-        transform:scale(1.08);
-
-    }
-
-    100%{
-
-        opacity:.7;
-
-        transform:scale(1);
-
-    }
-
-}
-
-/* ===========================
-      Responsive
-=========================== */
-
-@media(max-width:768px){
+@media(min-width:768px){
 
     .logo{
 
-        width:95px;
+        width:160px;
 
     }
 
-    h1{
+    .brand{
 
-        font-size:42px;
-
-        letter-spacing:8px;
+        font-size:48px;
 
     }
 
     .tagline{
 
-        font-size:15px;
+        font-size:17px;
 
     }
 
-    .loading-container{
+    .loader{
 
-        width:240px;
+        width:280px;
+
+    }
+
+    .loading-text{
+
+        font-size:15px;
 
     }
 
