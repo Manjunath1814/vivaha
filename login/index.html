@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vivaha | Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="background"></div>
+
+    <div class="blur blur1"></div>
+
+    <div class="blur blur2"></div>
+
+
+
+    <!-- Login Card -->
+
+    <div class="login-card">
+
+        <!-- Logo -->
+
+        <img src="../assets/brand-logo.png" class="brand-logo" alt="Vivaha">
+
+
+
+        <!-- Welcome -->
+
+        <h1>Welcome Back</h1>
+
+        <p class="subtitle">
+
+            Continue your journey to find your perfect life partner.
+
+        </p>
+
+
+
+        <!-- Google Login -->
+
+        <button id="googleLogin" class="google-btn">
+
+            <img src="../assets/google.svg" alt="Google">
+
+            <span>Continue with Google</span>
+
+        </button>
+
+
+
+        <!-- Divider -->
+
+        <div class="divider">
+
+            <span></span>
+
+            <p>OR</p>
+
+            <span></span>
+
+        </div>
+
+
+
+        <!-- Phone Login -->
+
+        <div class="phone-container">
+
+            <div class="country-code">
+
+                +91
+
+            </div>
+
+            <input
+
+                type="tel"
+
+                id="phone"
+
+                maxlength="10"
+
+                placeholder="Enter Mobile Number"
+
+            >
+
+        </div>
+
+
+
+        <button id="sendOtp" class="continue-btn">
+
+            Continue
+
+        </button>
+
+
+
+        <!-- OTP Section -->
+
+        <div id="otpSection" class="otp-section">
+
+            <h3>Verify OTP</h3>
+
+            <p>
+
+                Enter the 6-digit code sent to your mobile number.
+
+            </p>
+
+
+
+            <div class="otp-boxes">
+
+                <input maxlength="1">
+
+                <input maxlength="1">
+
+                <input maxlength="1">
+
+                <input maxlength="1">
+
+                <input maxlength="1">
+
+                <input maxlength="1">
+
+            </div>
+
+
+
+            <button id="verifyOtp" class="verify-btn">
+
+                Verify OTP
+
+            </button>
+
+
+
+            <p class="resend">
+
+                Didn't receive OTP?
+
+                <a href="#" id="resendOtp">
+
+                    Resend
+
+                </a>
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Terms -->
+
+        <div class="footer-text">
+
+            By continuing, you agree to our
+
+            <a href="#">Terms of Service</a>
+
+            and
+
+            <a href="#">Privacy Policy</a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Loading -->
+
+    <div id="loader" class="loader">
+
+        <div class="spinner"></div>
+
+        <p>Please wait...</p>
+
+    </div>
+
+
+
+    <script type="module" src="login.js"></script>
+
+</body>
+
+</html>
