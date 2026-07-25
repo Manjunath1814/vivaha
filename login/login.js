@@ -17,6 +17,13 @@ import {
     googleProvider
 } from "../firebase/firebase-config.js";
 
+import {
+    signInWithPopup,
+    RecaptchaVerifier,
+    signInWithPhoneNumber,
+    onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
 /* ==========================================================
    DOM REFERENCES
 ========================================================== */
